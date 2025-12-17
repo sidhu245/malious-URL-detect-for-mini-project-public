@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious URL Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>for miniproject</h1>
+            <p>Advanced Malicious URL Detection System</p>
+        </header>
+
+        <main>
+            <div class="glass-card">
+                <div class="input-group">
+                    <input type="text" id="urlInput" placeholder="Enter URL to analyze (e.g., http://example.com)"
+                        autocomplete="off">
+                    <button id="scanBtn" onclick="initiateScan()">SCAN</button>
+                </div>
+                <div id="errorMsg" class="error-message"></div>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="glass-card result-card">
+                    <div id="statusIcon" class="status-icon"></div>
+                    <h2 id="statusTitle">Safe</h2>
+                    <p id="statusReason">No threats detected.</p>
+                    <div class="details">
+                        <div class="detail-item">
+                            <span>Format Analysis:</span>
+                            <span id="formatStatus">Valid</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Pattern Match:</span>
+                            <span id="patternStatus">Clean</span>
+                        </div>
+                    </div>
+                    <button id="viewDetailsBtn" class="secondary-btn hidden" onclick="openModal()">Why is this
+                        unsafe?</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Detailed Analysis Modal -->
+        <div id="analysisModal" class="modal hidden">
+            <div class="modal-content glass-card">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <h2>Security Analysis</h2>
+                <div id="modalBody">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>BTech Cybersecurity Mini Project | Rule-Based Detection</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
